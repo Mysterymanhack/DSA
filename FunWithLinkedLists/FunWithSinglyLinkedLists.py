@@ -6,6 +6,7 @@ class Node:
         self.value = value
         self.next = kwargs.get('nextNode',None)
 
+
 #Creates a new node at the start of the linked list and makes it the head
 def insertNodeAtStart(value,Head):
     newNode = Node(value = value, nextNode = Head)

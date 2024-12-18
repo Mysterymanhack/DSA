@@ -49,7 +49,7 @@ class Queue:
         else:
             new_node.next = self.tail
             self.tail.previous = new_node
-            self.tail = new_node.next
+            self.tail = new_node
     
 
     def dequeue(self):

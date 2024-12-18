@@ -1,4 +1,4 @@
-#Program to implement stacks and perform various operations with them
+#Program to implement queues and perform various operations with them
 
 class Node:
     """

@@ -46,8 +46,44 @@ class Stack:
         '''Returns the value of the top node'''
         return self.head.value
 
-new_stack = Stack()
-new_stack.push(3)
-new_stack.push(5)
-print(new_stack.pop())
-print(new_stack.peek())
+
+def nextGreatestElement(list):
+    '''
+    Returns the index of the next value greater than all elements of a given list.
+    Returns -1 if none found.
+
+    Parameter: list
+    Returns: list
+    '''
+    stack = Stack()
+    current = 0
+    greatestList = [-1]*len(list)
+    while current < len(list):
+        if stack.head != None:
+            while stack.head != None and stack.head.value[1] < list[current]:
+                greatestList[stack.head.value[0]] = current
+                stack.pop()
+        stack.push([current,list[current]])
+        current += 1
+        print(stack.head.value)
+    return greatestList
+
+def lastLeastElement(list):
+    '''
+    Returns the index of the next value greater than all elements of a given list.
+    Returns -1 if none found.
+
+    Parameter: list
+    Returns: list
+    '''
+    stack = Stack()
+    current = len(list) - 1
+    greatestList = [-1]*len(list)
+    while current >= 0:
+        if stack.head != None:
+            while stack.head != None and stack.head.value[1] > list[current]:
+                greatestList[stack.head.value[0]] = current
+                stack.pop()
+        stack.push([current,list[current]])
+        current -= 1
+    return greatestList
